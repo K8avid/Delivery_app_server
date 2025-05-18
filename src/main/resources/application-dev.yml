@@ -1,0 +1,43 @@
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/appli
+    username: root
+    password: 5649
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop  # none  # validate   # update    # create     # create-drop
+    show-sql: false
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: chanezmzg25@gmail.com
+    password: ttkw njor svtg uvwf
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+        debug: true
+        
+
+google:
+  maps:
+    api:
+      key: AIzaSyC9SHD0T9A3wABYMdE-tOfZWHZ6mcbH9fI
+      base-url: https://maps.googleapis.com/maps/api
+
+
+
+
+# app:
+#   domain:
+#     url: https://reimagined-carnival-q7976vwq5xpr36wx6-8080.app.github.dev
+
+ 

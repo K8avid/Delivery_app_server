@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau Trajet Disponible</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f7;
+        }
+        .email-container {
+            max-width: 650px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            padding: 30px;
+            color: #333333;
+        }
+        .content h2 {
+            color: #007bff;
+        }
+        .trip-details {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e3e6eb;
+        }
+        .trip-details p {
+            margin: 10px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .trip-details i {
+            color: #007bff;
+            margin-right: 8px;
+        }
+        .footer {
+            text-align: center;
+            color: #666666;
+            font-size: 14px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>🚗 Nouveau Trajet Disponible</h1>
+        </div>
+        <div class="content">
+            <h2>Bonjour <span th:text="${senderName}"></span>,</h2>
+            <p>
+                Nous avons trouvé un trajet qui pourrait correspondre à votre colis. Voici les détails du trajet :
+            </p>
+            <div class="trip-details">
+                <p><i class="bi bi-geo-alt"></i><strong>Départ :</strong> <span th:text="${departureLocation}"></span></p>
+                <p><i class="bi bi-geo"></i><strong>Arrivée :</strong> <span th:text="${arrivalLocation}"></span></p>
+            
+
+                <p><i class="bi bi-calendar-date icon"></i><strong>Date de départ :</strong> 
+                    <span th:text="${#temporals.format(departureDate, 'EEEE, dd MMMM yyyy à HH:mm')}"></span>
+                </p>
+                <p><i class="bi bi-calendar2-check icon"></i><strong>Date d'arrivée estimée :</strong> 
+                    <span th:text="${#temporals.format(arrivalDate, 'EEEE, dd MMMM yyyy à HH:mm')}"></span>
+                </p>
+
+
+                
+                <p><i class="bi bi-clock"></i><strong>Durée estimée :</strong> <span th:text="${duration}"></span> minutes</p>
+                <p><i class="bi bi-ruler"></i><strong>Distance totale :</strong> 
+                    <span th:text="${#numbers.formatDecimal(distance, 2, 2)}"></span> km
+                </p>
+            </div>
+            <p>
+                Merci de vérifier si ce trajet vous convient.
+            </p>
+            <p>
+                Cordialement,<br>
+                <span class="highlight">L'équipe de livraison</span>.
+            </p>
+        </div>
+        <div class="footer">
+            <p>Vous recevez cet email parce que vous êtes inscrit sur notre plateforme.</p>
+            <p>Pour vous désinscrire, cliquez <a href="#">ici</a>.</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

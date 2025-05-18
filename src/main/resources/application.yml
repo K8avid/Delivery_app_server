@@ -1,0 +1,23 @@
+
+spring:
+
+  web:
+    locale: fr
+    locale-resolver: fixed #accept-header
+
+  application:
+    name: shiply
+  profiles:
+    active: dev
+  # http:
+  #   encoding:
+  #     charset: UTF-8
+  #     enabled: true
+  #     force: true
+
+
+server:
+  address: 0.0.0.0
+  port: 8080 
+  servlet:
+    context-path: /api/v1/
