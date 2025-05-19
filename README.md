@@ -3,7 +3,7 @@
 ## Prérequis
 
 &emsp; - Installer Java Development Kit (JDK) 
-&esmp; - Installer MySQL
+&emsp; - Installer MySQL
 
 ## Lancement du Serveur
 ```
